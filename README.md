@@ -12,3 +12,6 @@ Este sistema permite cifrar y descifrar mensajes utilizando los algoritmos clás
 - Publicado mediante el protocolo seguro **HTTPS**.
 - Código limpio de claves privadas o credenciales sensibles.
 - Sin dependencias de librerías externas para evitar vulnerabilidades de cadena de suministro.
+
+## SHA-256 Hash del reporte:
+-  D0B6215A53A54D8519E3C523F7D160BB2A66DDA72B1CD64FC4A43D488E577807
