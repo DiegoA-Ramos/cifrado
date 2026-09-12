@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Descifrador Al-Kindi — César &amp; Atbash</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="top">
+    <h1>Descifrador Al-Kindi</h1>
+  </header>
+
+  <section class="alphabet-bar">
+    <label for="alphabetInput">Alfabeto</label>
+    <input type="text" id="alphabetInput" value="ABCDEFGHIJKLMNÑOPQRSTUVWXYZabcdefghijklmnñopqrstuvwxyz0123456789 .,;:-_!?">
+    <span class="alphabet-count"><strong id="alphabetLength">0</strong> símbolos</span>
+  </section>
+
+  <!-- SECCIÓN PRINCIPAL: DESCIFRADO AUTOMÁTICO -->
+  <section class="panel panel-main">
+    <h2>Descifrar automáticamente</h2>
+    <p class="hint">Pega el texto cifrado. El programa prueba César (todos los desplazamientos) y Atbash, y elige el resultado más parecido al español.</p>
+
+    <textarea id="decryptInput" placeholder="Pega aquí el texto cifrado..."></textarea>
+    <button class="btn btn-primary" id="autoDecryptBtn">Descifrar</button>
+
+    <div class="output" id="decryptOutput" hidden>
+      <div class="output-row">
+        <span class="output-label">Método detectado</span>
+        <span class="badge" id="detectedMethod">—</span>
+      </div>
+      <div class="output-row">
+        <span class="output-label">Mensaje descifrado</span>
+        <button class="btn-copy" id="copyDecryptBtn" type="button">Copiar</button>
+      </div>
+      <div class="result-text" id="decryptResult">—</div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN SECUNDARIA: CIFRADO MANUAL -->
+  <details class="panel panel-secondary">
+    <summary>Cifrar un mensaje manualmente</summary>
+
+    <textarea id="encryptInput" placeholder="Escribe tu mensaje aquí..."></textarea>
+
+    <div class="row">
+      <div class="field">
+        <label for="cipherSelect">Método</label>
+        <select id="cipherSelect">
+          <option value="cesar">César</option>
+          <option value="atbash">Atbash</option>
+        </select>
+      </div>
+      <div class="field" id="shiftGroup">
+        <label for="shiftInput">Desplazamiento (k)</label>
+        <input type="number" id="shiftInput" value="3" min="1">
+      </div>
+    </div>
+
+    <button class="btn btn-secondary" id="encryptBtn">Cifrar</button>
+
+    <div class="output" id="encryptOutput" hidden>
+      <div class="output-row">
+        <span class="output-label">Resultado</span>
+        <button class="btn-copy" id="copyEncryptBtn" type="button">Copiar</button>
+      </div>
+      <div class="result-text" id="encryptResult">—</div>
+    </div>
+  </details>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
